@@ -60,21 +60,15 @@ open class CalendarCollectionViewController: UICollectionViewController, UIColle
     open override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 		let firstDayOfMonth = Date(section: section, startYear: startYear)
 		
-		let addingPrefixDaysWithMonthDyas = firstDayOfMonth.numberOfDaysInMonth() + firstDayOfMonth.weekday() - Calendar.current.firstWeekday
-		
-		let addingSuffixDays = addingPrefixDaysWithMonthDyas % 7
-		
-		var totalNumber  = addingPrefixDaysWithMonthDyas
-		
-		if addingSuffixDays != 0 {
-			totalNumber = totalNumber + (7 - addingSuffixDays)
+		var prefixDays = firstDayOfMonth.weekday() - Calendar.current.firstWeekday
+
+		if prefixDays == -1 {
+			prefixDays += 7
 		}
 		
-		if firstDayOfMonth.weekday() == 1 {
-			totalNumber += 7
-		}
+		let total = prefixDays + firstDayOfMonth.numberOfDaysInMonth()
 		
-		return totalNumber
+		return total
 	}
 
     open override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

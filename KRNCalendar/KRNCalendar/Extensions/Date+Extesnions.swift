@@ -10,31 +10,31 @@ import Foundation
 
 extension Date {
 	internal init(section: Int, startYear: Int) {
-		var calendar = Calendar.current
-		calendar.timeZone = TimeZone(abbreviation: "UTC") ?? TimeZone.current
-		
 		var dateComponents = DateComponents()
 		
 		dateComponents.year = startYear + (section + 1) / 12
 		dateComponents.month = (section + 1) % 12
+		dateComponents.hour = 0
+		dateComponents.minute = 0
+		dateComponents.second = 0
 		
-		let firstDayOfMonth = calendar.date(from: dateComponents)!
+		let firstDayOfMonth = Calendar.current.date(from: dateComponents)!
 		
 		self = firstDayOfMonth
 	}
 	
 	internal init(indexPath: IndexPath, startYear: Int) {
-		var calendar = Calendar.current
-		calendar.timeZone = TimeZone(abbreviation: "UTC") ?? TimeZone.current
-		
 		var dateComponents = DateComponents()
 		
 		dateComponents.year = startYear + (indexPath.section + 1) / 12
 		dateComponents.month = (indexPath.section + 1) % 12
+		dateComponents.hour = 0
+		dateComponents.minute = 0
+		dateComponents.second = 0
 		
-		let firstDayOfMonth = calendar.date(from: dateComponents)!
+		let firstDayOfMonth = Calendar.current.date(from: dateComponents)!
 		
-		var prefixDays = firstDayOfMonth.weekday() - calendar.firstWeekday
+		var prefixDays = firstDayOfMonth.weekday() - Calendar.current.firstWeekday
 		
 		if prefixDays == -1 {
 			prefixDays += 7
