@@ -68,7 +68,9 @@ open class CalendarCollectionViewController: UICollectionViewController, UIColle
 		
 		let total = prefixDays + firstDayOfMonth.numberOfDaysInMonth()
 		
-		return total
+		let suffix = total % 7
+		
+		return suffix == 0 ? total : total + (7 - suffix)
 	}
 
     open override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
