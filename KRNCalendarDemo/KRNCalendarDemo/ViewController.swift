@@ -11,7 +11,7 @@ import KRNCalendar
 
 class ViewController: UIViewController {
 	@IBAction func showCalendar() {
-		let vc = CalendarCollectionViewController(startYear: 2000, endYear: 2020)
+		let vc = CalendarViewController(startYear: 2000, endYear: 2020)
 		
 		navigationController?.pushViewController(vc, animated: true)
 	}

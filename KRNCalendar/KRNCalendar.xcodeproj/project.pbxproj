@@ -7,15 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F23C28121466E5100E53F2D /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F23C28021466E5100E53F2D /* CalendarViewController.swift */; };
 		9F3FED5B21411DF60052B4A5 /* KRNCalendar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F3FED5121411DF60052B4A5 /* KRNCalendar.framework */; };
 		9F3FED6021411DF60052B4A5 /* KRNCalendarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3FED5F21411DF60052B4A5 /* KRNCalendarTests.swift */; };
 		9F3FED6221411DF60052B4A5 /* KRNCalendar.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F3FED5421411DF60052B4A5 /* KRNCalendar.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9FAC0A422141219200BBF913 /* CalendarCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAC0A412141219200BBF913 /* CalendarCollectionViewController.swift */; };
-		9FAC0A4521412B8000BBF913 /* CalendarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAC0A4321412B8000BBF913 /* CalendarCollectionViewCell.swift */; };
-		9FAC0A4621412B8000BBF913 /* CalendarCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FAC0A4421412B8000BBF913 /* CalendarCollectionViewCell.xib */; };
+		9FAC0A4521412B8000BBF913 /* CalendarViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAC0A4321412B8000BBF913 /* CalendarViewCell.swift */; };
+		9FAC0A4621412B8000BBF913 /* CalendarViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FAC0A4421412B8000BBF913 /* CalendarViewCell.xib */; };
 		9FAC0A4921412CCA00BBF913 /* Date+Extesnions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAC0A4821412CCA00BBF913 /* Date+Extesnions.swift */; };
 		9FAC0A4E21415B3B00BBF913 /* MonthCalendarCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAC0A4C21415B3B00BBF913 /* MonthCalendarCollectionReusableView.swift */; };
 		9FAC0A4F21415B3B00BBF913 /* MonthCalendarCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FAC0A4D21415B3B00BBF913 /* MonthCalendarCollectionReusableView.xib */; };
+		9FAC0A512142A34900BBF913 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAC0A502142A34900BBF913 /* CalendarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,18 +30,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9F23C28021466E5100E53F2D /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		9F3FED5121411DF60052B4A5 /* KRNCalendar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KRNCalendar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F3FED5421411DF60052B4A5 /* KRNCalendar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KRNCalendar.h; sourceTree = "<group>"; };
 		9F3FED5521411DF60052B4A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9F3FED5A21411DF60052B4A5 /* KRNCalendarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KRNCalendarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F3FED5F21411DF60052B4A5 /* KRNCalendarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KRNCalendarTests.swift; sourceTree = "<group>"; };
 		9F3FED6121411DF60052B4A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9FAC0A412141219200BBF913 /* CalendarCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCollectionViewController.swift; sourceTree = "<group>"; };
-		9FAC0A4321412B8000BBF913 /* CalendarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCollectionViewCell.swift; sourceTree = "<group>"; };
-		9FAC0A4421412B8000BBF913 /* CalendarCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarCollectionViewCell.xib; sourceTree = "<group>"; };
+		9FAC0A4321412B8000BBF913 /* CalendarViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewCell.swift; sourceTree = "<group>"; };
+		9FAC0A4421412B8000BBF913 /* CalendarViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarViewCell.xib; sourceTree = "<group>"; };
 		9FAC0A4821412CCA00BBF913 /* Date+Extesnions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extesnions.swift"; sourceTree = "<group>"; };
 		9FAC0A4C21415B3B00BBF913 /* MonthCalendarCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthCalendarCollectionReusableView.swift; sourceTree = "<group>"; };
 		9FAC0A4D21415B3B00BBF913 /* MonthCalendarCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MonthCalendarCollectionReusableView.xib; sourceTree = "<group>"; };
+		9FAC0A502142A34900BBF913 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,9 +87,10 @@
 			children = (
 				9F3FED5421411DF60052B4A5 /* KRNCalendar.h */,
 				9F3FED5521411DF60052B4A5 /* Info.plist */,
-				9FAC0A412141219200BBF913 /* CalendarCollectionViewController.swift */,
-				9FAC0A4321412B8000BBF913 /* CalendarCollectionViewCell.swift */,
-				9FAC0A4421412B8000BBF913 /* CalendarCollectionViewCell.xib */,
+				9F23C28021466E5100E53F2D /* CalendarViewController.swift */,
+				9FAC0A502142A34900BBF913 /* CalendarView.swift */,
+				9FAC0A4321412B8000BBF913 /* CalendarViewCell.swift */,
+				9FAC0A4421412B8000BBF913 /* CalendarViewCell.xib */,
 				9FAC0A4C21415B3B00BBF913 /* MonthCalendarCollectionReusableView.swift */,
 				9FAC0A4D21415B3B00BBF913 /* MonthCalendarCollectionReusableView.xib */,
 				9FAC0A4721412CB800BBF913 /* Extensions */,
@@ -205,7 +208,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9FAC0A4F21415B3B00BBF913 /* MonthCalendarCollectionReusableView.xib in Resources */,
-				9FAC0A4621412B8000BBF913 /* CalendarCollectionViewCell.xib in Resources */,
+				9FAC0A4621412B8000BBF913 /* CalendarViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,10 +226,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F23C28121466E5100E53F2D /* CalendarViewController.swift in Sources */,
+				9FAC0A512142A34900BBF913 /* CalendarView.swift in Sources */,
 				9FAC0A4921412CCA00BBF913 /* Date+Extesnions.swift in Sources */,
-				9FAC0A4521412B8000BBF913 /* CalendarCollectionViewCell.swift in Sources */,
+				9FAC0A4521412B8000BBF913 /* CalendarViewCell.swift in Sources */,
 				9FAC0A4E21415B3B00BBF913 /* MonthCalendarCollectionReusableView.swift in Sources */,
-				9FAC0A422141219200BBF913 /* CalendarCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

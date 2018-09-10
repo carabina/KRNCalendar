@@ -1,5 +1,5 @@
 //
-//  CalendarCollectionViewCell.swift
+//  CalendarViewCell.swift
 //  KRNCalendar
 //
 //  Created by Alexandre Brispot on 06/09/2018.
@@ -8,14 +8,14 @@
 
 import UIKit
 
-class CalendarCollectionViewCell: UICollectionViewCell {
+class CalendarViewCell: UICollectionViewCell {
 	@IBOutlet weak var lbl_day: UILabel!
 	@IBOutlet weak var lbl_debugDate: UILabel!
 
 	private let dateFormatter = DateFormatter()
 	
 	static var nib: UINib {
-		return UINib(nibName: "CalendarCollectionViewCell", bundle: Bundle(for: self.self))
+		return UINib(nibName: "CalendarViewCell", bundle: Bundle(for: self.self))
 	}
 	
 	override func awakeFromNib() {
