@@ -78,10 +78,4 @@ extension Date {
 	func year() -> Int {
 		return Calendar.current.dateComponents([.year], from: self).year!
 	}
-	
-	func monthName() -> String {
-		let formatter = DateFormatter()
-		formatter.setLocalizedDateFormatFromTemplate("MMMM")
-		return formatter.string(from: self)
-	}
 }
