@@ -10,6 +10,7 @@ import UIKit
 
 public protocol CalendarViewDataSource: class {
 	func calendarView(_ calendarView: CalendarView, cellForDate date: Date, currentMonth: Bool) -> UICollectionViewCell
+	func calendarView(_ calendarView: CalendarView, viewForSupplementaryElementOfKind kind: String, forDate date: Date) -> UICollectionReusableView
 }
 
 open class CalendarView: UIView {
@@ -53,14 +54,11 @@ open class CalendarView: UIView {
 
 		collectionView.dataSource = self
 		collectionView.register(CalendarViewCell.nib, forCellWithReuseIdentifier: "cell")
+		collectionView.register(CalendarReusableView.nib, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "header")
 	}
 	
 	required public init?(coder aDecoder: NSCoder) {
 		fatalError("init(coder:) has not been implemented")
-	}
-	
-	public func dequeueReusableCell(withReuseIdentifier identifier: String, for date: Date) -> UICollectionViewCell {
-		return collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: IndexPath(item: 0, section: 0))
 	}
 	
 	public func register(_ cellClass: AnyClass?, forCellWithReuseIdentifier identifier: String) {
@@ -69,6 +67,14 @@ open class CalendarView: UIView {
 	
 	public func register(_ nib: UINib?, forCellWithReuseIdentifier identifier: String) {
 		collectionView.register(nib, forCellWithReuseIdentifier: identifier)
+	}
+	
+	public func dequeueReusableCell(withReuseIdentifier identifier: String, for date: Date) -> UICollectionViewCell {
+		return collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: IndexPath(item: 0, section: 0))
+	}
+	
+	public func dequeueReusableSupplementaryView(ofKind kind: String, withReuseIdentifier identifier: String, for date: Date) -> UICollectionReusableView {
+		return collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: identifier, for: IndexPath(item: 0, section: (date.year() - startYear) * 12 + date.month() - 1))
 	}
 }
 
@@ -106,6 +112,24 @@ extension CalendarView: UICollectionViewDataSource {
 		}
 
 		return customCell
+	}
+	
+	public func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+		let date = Date(section: indexPath.section, startYear: startYear)
+		
+		guard let customView = dataSource?.calendarView(self, viewForSupplementaryElementOfKind: kind, forDate: date) else {
+			if kind == UICollectionView.elementKindSectionHeader {
+				let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "header", for: indexPath) as! CalendarReusableView
+				
+				header.setWith(date: date)
+				
+				return header
+			} else {
+				return UICollectionReusableView()
+			}
+		}
+		
+		return customView
 	}
 }
 

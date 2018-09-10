@@ -25,20 +25,11 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MbY-q9-3vi">
-                        <rect key="frame" x="0.0" y="99" width="121" height="12"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                 </subviews>
             </view>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="4b1-i8-LTs" secondAttribute="trailing" id="EaK-Dq-ZA3"/>
                 <constraint firstItem="4b1-i8-LTs" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="IB1-Va-gc2"/>
-                <constraint firstItem="MbY-q9-3vi" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Rle-qA-oba"/>
-                <constraint firstAttribute="trailing" secondItem="MbY-q9-3vi" secondAttribute="trailing" id="Xma-6E-TGZ"/>
-                <constraint firstAttribute="bottom" secondItem="MbY-q9-3vi" secondAttribute="bottom" id="bbA-jI-u8F"/>
                 <constraint firstItem="4b1-i8-LTs" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="lkh-x4-Sex"/>
                 <constraint firstAttribute="bottom" secondItem="4b1-i8-LTs" secondAttribute="bottom" id="uG8-r8-WBb"/>
             </constraints>
@@ -46,7 +37,6 @@
             <size key="customSize" width="121" height="111"/>
             <connections>
                 <outlet property="lbl_day" destination="4b1-i8-LTs" id="Im5-Lu-knW"/>
-                <outlet property="lbl_debugDate" destination="MbY-q9-3vi" id="rT6-SO-KZL"/>
             </connections>
             <point key="canvasLocation" x="194.40000000000001" y="181.25937031484258"/>
         </collectionViewCell>

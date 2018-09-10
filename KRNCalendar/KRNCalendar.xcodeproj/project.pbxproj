@@ -14,8 +14,8 @@
 		9FAC0A4521412B8000BBF913 /* CalendarViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAC0A4321412B8000BBF913 /* CalendarViewCell.swift */; };
 		9FAC0A4621412B8000BBF913 /* CalendarViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FAC0A4421412B8000BBF913 /* CalendarViewCell.xib */; };
 		9FAC0A4921412CCA00BBF913 /* Date+Extesnions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAC0A4821412CCA00BBF913 /* Date+Extesnions.swift */; };
-		9FAC0A4E21415B3B00BBF913 /* MonthCalendarCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAC0A4C21415B3B00BBF913 /* MonthCalendarCollectionReusableView.swift */; };
-		9FAC0A4F21415B3B00BBF913 /* MonthCalendarCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FAC0A4D21415B3B00BBF913 /* MonthCalendarCollectionReusableView.xib */; };
+		9FAC0A4E21415B3B00BBF913 /* CalendarReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAC0A4C21415B3B00BBF913 /* CalendarReusableView.swift */; };
+		9FAC0A4F21415B3B00BBF913 /* CalendarReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FAC0A4D21415B3B00BBF913 /* CalendarReusableView.xib */; };
 		9FAC0A512142A34900BBF913 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAC0A502142A34900BBF913 /* CalendarView.swift */; };
 /* End PBXBuildFile section */
 
@@ -40,8 +40,8 @@
 		9FAC0A4321412B8000BBF913 /* CalendarViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewCell.swift; sourceTree = "<group>"; };
 		9FAC0A4421412B8000BBF913 /* CalendarViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarViewCell.xib; sourceTree = "<group>"; };
 		9FAC0A4821412CCA00BBF913 /* Date+Extesnions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extesnions.swift"; sourceTree = "<group>"; };
-		9FAC0A4C21415B3B00BBF913 /* MonthCalendarCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthCalendarCollectionReusableView.swift; sourceTree = "<group>"; };
-		9FAC0A4D21415B3B00BBF913 /* MonthCalendarCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MonthCalendarCollectionReusableView.xib; sourceTree = "<group>"; };
+		9FAC0A4C21415B3B00BBF913 /* CalendarReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarReusableView.swift; sourceTree = "<group>"; };
+		9FAC0A4D21415B3B00BBF913 /* CalendarReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarReusableView.xib; sourceTree = "<group>"; };
 		9FAC0A502142A34900BBF913 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -91,8 +91,8 @@
 				9FAC0A502142A34900BBF913 /* CalendarView.swift */,
 				9FAC0A4321412B8000BBF913 /* CalendarViewCell.swift */,
 				9FAC0A4421412B8000BBF913 /* CalendarViewCell.xib */,
-				9FAC0A4C21415B3B00BBF913 /* MonthCalendarCollectionReusableView.swift */,
-				9FAC0A4D21415B3B00BBF913 /* MonthCalendarCollectionReusableView.xib */,
+				9FAC0A4C21415B3B00BBF913 /* CalendarReusableView.swift */,
+				9FAC0A4D21415B3B00BBF913 /* CalendarReusableView.xib */,
 				9FAC0A4721412CB800BBF913 /* Extensions */,
 			);
 			path = KRNCalendar;
@@ -207,7 +207,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9FAC0A4F21415B3B00BBF913 /* MonthCalendarCollectionReusableView.xib in Resources */,
+				9FAC0A4F21415B3B00BBF913 /* CalendarReusableView.xib in Resources */,
 				9FAC0A4621412B8000BBF913 /* CalendarViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -230,7 +230,7 @@
 				9FAC0A512142A34900BBF913 /* CalendarView.swift in Sources */,
 				9FAC0A4921412CCA00BBF913 /* Date+Extesnions.swift in Sources */,
 				9FAC0A4521412B8000BBF913 /* CalendarViewCell.swift in Sources */,
-				9FAC0A4E21415B3B00BBF913 /* MonthCalendarCollectionReusableView.swift in Sources */,
+				9FAC0A4E21415B3B00BBF913 /* CalendarReusableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

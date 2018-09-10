@@ -47,4 +47,16 @@ open class CalendarViewController: UIViewController, CalendarViewDataSource {
 		
 		return cell
 	}
+	
+	public func calendarView(_ calendarView: CalendarView, viewForSupplementaryElementOfKind kind: String, forDate date: Date) -> UICollectionReusableView {
+		if kind == UICollectionView.elementKindSectionHeader {
+			let header = calendarView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "header", for: date) as! CalendarReusableView
+			
+			header.setWith(date: date)
+			
+			return header
+		} else {
+			return UICollectionReusableView()
+		}
+	}
 }

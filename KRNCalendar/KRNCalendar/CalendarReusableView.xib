@@ -12,13 +12,13 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" id="U6b-Vx-4bR" customClass="MonthCalendarCollectionReusableView" customModule="KRNCalendar" customModuleProvider="target">
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" id="U6b-Vx-4bR" customClass="CalendarReusableView" customModule="KRNCalendar" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="86"/>
             <autoresizingMask key="autoresizingMask"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QYX-LP-cvY">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="86"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QYX-LP-cvY">
+                    <rect key="frame" x="0.0" y="54.5" width="320" height="31.5"/>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -27,7 +27,6 @@
                 <constraint firstItem="QYX-LP-cvY" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" id="I4Y-P9-fyn"/>
                 <constraint firstItem="VXr-Tz-HHm" firstAttribute="bottom" secondItem="QYX-LP-cvY" secondAttribute="bottom" id="PDo-Iu-igV"/>
                 <constraint firstItem="VXr-Tz-HHm" firstAttribute="trailing" secondItem="QYX-LP-cvY" secondAttribute="trailing" id="ZPh-ZH-1Yt"/>
-                <constraint firstItem="QYX-LP-cvY" firstAttribute="top" secondItem="VXr-Tz-HHm" secondAttribute="top" id="m1Q-n4-aaw"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="VXr-Tz-HHm"/>
             <connections>
