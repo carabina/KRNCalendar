@@ -13,14 +13,25 @@ public protocol CalendarViewDataSource: class {
 	func calendarView(_ calendarView: CalendarView, viewForSupplementaryElementOfKind kind: String, forDate date: Date) -> UICollectionReusableView
 }
 
-open class CalendarView: UIView {
+public protocol CalendarViewDelegate: class {
+	func calendarView(_ calendarView: CalendarView, didSelectDate date: Date)
+	func calendarView(_ calendarView: CalendarView, didDeselectDate date: Date)
+}
+
+extension CalendarViewDelegate {
+	func calendarView(_ calendarView: CalendarView, didSelectDate date: Date) { }
+	func calendarView(_ calendarView: CalendarView, didDeselectDate date: Date) { }
+}
+
+public class CalendarView: UIView {
 	private let startYear: Int
 	private let endYear: Int
 	
 	private var collectionView: UICollectionView
 	
 	public weak var dataSource: CalendarViewDataSource?
-	
+	public weak var delegate: CalendarViewDelegate?
+
 	public init(frame: CGRect, startYear: Int, endYear: Int) {
 		self.startYear = startYear
 		self.endYear = endYear
@@ -53,7 +64,9 @@ open class CalendarView: UIView {
 		collectionView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
 
 		collectionView.dataSource = self
+		collectionView.delegate = self
 		collectionView.register(CalendarViewCell.nib, forCellWithReuseIdentifier: "cell")
+		collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "emptyCell")
 		collectionView.register(CalendarReusableView.nib, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "header")
 	}
 	
@@ -70,11 +83,22 @@ open class CalendarView: UIView {
 	}
 	
 	public func dequeueReusableCell(withReuseIdentifier identifier: String, for date: Date) -> UICollectionViewCell {
-		return collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: IndexPath(item: 0, section: 0))
+		let section = (date.year() - startYear) * 12 + date.month() - 1
+		let firstDayOfMonth = Date(section: section, startYear: startYear)
+		var prefixDays = firstDayOfMonth.weekday() - Calendar.current.firstWeekday
+		
+		if prefixDays == -1 {
+			prefixDays += 7
+		}
+		
+		let item = prefixDays + date.day() - 1
+		
+		return collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: IndexPath(item: item, section: section))
 	}
 	
 	public func dequeueReusableSupplementaryView(ofKind kind: String, withReuseIdentifier identifier: String, for date: Date) -> UICollectionReusableView {
-		return collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: identifier, for: IndexPath(item: 0, section: (date.year() - startYear) * 12 + date.month() - 1))
+		let section = (date.year() - startYear) * 12 + date.month() - 1
+		return collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: identifier, for: IndexPath(item: 0, section: section))
 	}
 }
 
@@ -105,18 +129,26 @@ extension CalendarView: UICollectionViewDataSource {
 		let sectionMonth = Date(section: indexPath.section, startYear: startYear).month()
 		let rowMonth = date.month()
 		
+		if rowMonth != sectionMonth {
+			let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "emptyCell", for: indexPath)
+			cell.isUserInteractionEnabled = false
+			return cell
+		}
+		
 		guard let customCell = dataSource?.calendarView(self, cellForDate: date, currentMonth: rowMonth == sectionMonth) else {
 			let cell = dequeueReusableCell(withReuseIdentifier: "cell", for: date) as! CalendarViewCell
 			cell.setWith(date: date)
 			return cell
 		}
 
+//		customCell.isUserInteractionEnabled = rowMonth == sectionMonth
+
 		return customCell
 	}
 	
 	public func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
 		let date = Date(section: indexPath.section, startYear: startYear)
-		
+
 		guard let customView = dataSource?.calendarView(self, viewForSupplementaryElementOfKind: kind, forDate: date) else {
 			if kind == UICollectionView.elementKindSectionHeader {
 				let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "header", for: indexPath) as! CalendarReusableView
@@ -130,6 +162,28 @@ extension CalendarView: UICollectionViewDataSource {
 		}
 		
 		return customView
+	}
+}
+
+extension CalendarView: UICollectionViewDelegate {
+	public func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+		let date = Date(indexPath: indexPath, startYear: startYear)
+		let sectionMonth = Date(section: indexPath.section, startYear: startYear).month()
+		let rowMonth = date.month()
+		
+		return rowMonth == sectionMonth
+	}
+	
+	public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+		let date = Date(indexPath: indexPath, startYear: startYear)
+
+		delegate?.calendarView(self, didSelectDate: date)
+	}
+	
+	public func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+		let date = Date(indexPath: indexPath, startYear: startYear)
+
+		delegate?.calendarView(self, didDeselectDate: date)
 	}
 }
 
