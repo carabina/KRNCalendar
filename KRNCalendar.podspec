@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "KRNCalendar"
-  s.version          = "0.0.1"
+  s.version          = "0.0.2"
   s.summary          = "A Calendar view for iOS"
   s.description      = <<-DESC
 Features
@@ -12,7 +12,7 @@ DESC
   s.homepage         = "https://github.com/kireyin/KRNCalendar"
   s.license          = 'MIT'
   s.author           = { "Kireyin" => "abrispot@gmail.com" }
-  s.source           = { :git => "https://github.com/kireyin/KRNCalendar.git", :tag => '0.0.1' }
+  s.source           = { :git => "https://github.com/kireyin/KRNCalendar.git", :tag => '0.0.2' }
   s.platform	     = :ios, '9.1'
   s.swift_version    = '4.2'
   s.requires_arc     = true
